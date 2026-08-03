@@ -7,7 +7,9 @@ body {
 }
 
 header{
-  background-color: #90ee90;
+  background-image: url('Images/Lake Pier.jpg');
+  background-size: cover;
+  background-position: center;
   color: white;
   text-align: center;
   padding: 50px 20px;
