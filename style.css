@@ -30,3 +30,19 @@ section {
 h2{
   color: #005b96;
 }
+
+nav { 
+    margin-top:25px;
+}
+
+nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+      transition: color .3s;
+}
+
+nav a:hover{
+  color: #ffd54f;
+}
