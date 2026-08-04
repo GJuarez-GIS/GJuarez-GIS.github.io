@@ -36,12 +36,184 @@
           </p>
         </section>
       
-        <section id="projects">
-          <h2>Projects</h2>
 
-          <p>
-              My GIS projects will be added here.
-          </p>
+            <section id="projects">
+    <h2>Projects</h2>
+
+    <!-- Featured Project -->
+    <article class="featured-project">
+        <div class="featured-image">
+            <img
+                src="images/Los angeles.jpg"
+                alt="Orange County composite address locator project"
+            >
+        </div>
+
+        <div class="featured-content">
+            <p class="project-label">Featured Project</p>
+
+            <h3>Orange County Composite Address Locator</h3>
+
+            <p>
+                Developed and validated a composite address locator in ArcGIS Pro
+                using multiple authoritative address datasets. The locator was
+                designed to improve parcel-level match accuracy and support
+                repeatable geocoding workflows.
+            </p>
+
+            <p>
+                Comparative testing showed a 69.5% improvement in parcel-level
+                match accuracy. I also documented a standardized methodology for
+                maintaining and updating the locator.
+            </p>
+
+            <div class="project-details">
+                <p>
+                    <strong>Tools:</strong>
+                    ArcGIS Pro, Composite Address Locators, QA/QC
+                </p>
+
+                <p>
+                    <strong>Skills:</strong>
+                    Locator development, testing, validation, documentation
+                </p>
+            </div>
+
+            <a class="project-button" href="#geocoding-project">
+                View Related Geocoding Project
+            </a>
+        </div>
+    </article>
+
+    <!-- Other Projects -->
+    <h3 class="other-projects-title">Other Projects</h3>
+
+    <div class="project-grid">
+
+        <article class="project-card" id="geocoding-project">
+            <img
+                src="images/Los Angeles.jpg"
+                alt="Large-scale address geocoding project"
+            >
+
+            <div class="project-card-content">
+                <h3>Large-Scale Address Geocoding</h3>
+
+                <p>
+                    Geocoded and validated large address datasets using ArcGIS Pro,
+                    custom locators, match review, and quality-control procedures.
+                </p>
+
+                <p class="project-tools">
+                    ArcGIS Pro · Geocoding · QA/QC
+                </p>
+            </div>
+        </article>
+
+        <article class="project-card">
+           <article class="project-card">
+
+    <div class="map-carousel">
+        <button
+            class="carousel-button previous"
+            type="button"
+            onclick="changeMap(-1)"
+            aria-label="Previous map"
+        >
+            &#10094;
+        </button>
+
+        <div class="carousel-slide">
+            <img
+                id="carousel-map"
+                src="images/Anaheim_HE.png"
+                alt="Published candidate sites map for Anaheim"
+            >
+
+            <p id="carousel-caption">
+                Anaheim Candidate Sites Map
+            </p>
+        </div>
+
+        <button
+            class="carousel-button next"
+            type="button"
+            onclick="changeMap(1)"
+            aria-label="Next map"
+        >
+            &#10095;
+        </button>
+    </div>
+
+    <div class="project-card-content">
+        <h3>Candidate Sites Data Standardization</h3>
+
+        <p>
+            Collected, cleaned, standardized, and compiled candidate-sites
+            GIS data from Orange County jurisdictions for regional delivery
+            and publication.
+        </p>
+
+        <p class="project-tools">
+            ArcGIS Pro · Data Management · Quality Control
+        </p>
+    </div>
+
+</article>
+            
+
+        </article>
+
+        <article class="project-card">
+    <img
+        src="images/Automation_1.png"
+        alt="ArcGIS ModelBuilder workflow for building footprint classification"
+    >
+
+    <div class="project-card-content">
+        <h3>Building Footprint Automation</h3>
+
+        <p>
+            Developed a ModelBuilder and ArcPy workflow to classify building
+            footprints, populate standardized attributes, and reduce manual
+            data-entry errors.
+        </p>
+
+        <p class="project-tools">
+            ArcGIS Pro · ModelBuilder · ArcPy · QA/QC
+        </p>
+
+        <a class="project-button" href="BuildingFootprints.html">
+            View Project
+        </a>
+    </div>
+</article>
+        </article>
+
+
+        <article class="project-card">
+            <img
+                src="images/Los Angeles.jpg"
+                alt="GIS cartography and map layout example"
+            >
+
+            <div class="project-card-content">
+                <h3>Cartography and Map Production</h3>
+
+                <p>
+                    Produced and updated GIS map layouts using clear symbology,
+                    labeling, legends, inset maps, and publication-ready design.
+                </p>
+
+                <p class="project-tools">
+                    Cartography · Layout Design · ArcGIS Pro
+                </p>
+            </div>
+        </article>
+
+    </div>
+</section>
+
 
           <section id="contact">
               <h2>Contact</h2>
@@ -51,6 +223,7 @@
           </section>
         </section>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
   
