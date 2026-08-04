@@ -1,26 +1,26 @@
 const maps = [
     {
-        image: "images/Anaheim_HE.png",
+        image: "Images/Anaheim_HE.png",
         caption: "Anaheim Candidate Sites Map",
         alt: "Published candidate sites map for Anaheim"
     },
     {
-        image: "images/Fullerton_HE.png",
+        image: "Images/Fullerton_HE.png",
         caption: "Fullerton Candidate Sites Map",
         alt: "Published candidate sites map for Fullerton"
     },
     {
-        image: "images/Irvine_HE.png",
+        image: "Images/Irvine_HE.png",
         caption: "Irvine Candidate Sites Map",
         alt: "Published candidate sites map for Irvine"
     },
     {
-        image: "images/santa-ana-map.jpg",
+        image: "Images/santa-ana-map.jpg",
         caption: "Santa Ana Candidate Sites Map",
         alt: "Published candidate sites map for Santa Ana"
     },
     {
-        image: "images/orange-map.jpg",
+        image: "Images/orange-map.jpg",
         caption: "Orange Candidate Sites Map",
         alt: "Published candidate sites map for Orange"
     }
