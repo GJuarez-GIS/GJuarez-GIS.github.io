@@ -15,7 +15,7 @@ body {
       rgba(10, 20, 35, 0.70),
       rgba(10, 20, 35, 0.75)
     ),
-    url("Images/Downtown_LA.png");
+    url("/Images/Downtown_LA.png");
 
   background-size: cover;
   background-position: center;
@@ -32,7 +32,7 @@ body::before {
         rgba(10,20,35,.65),
         rgba(10,20,35,.75)
       ),
-      url("Images/Downtown_LA.png") center/cover no-repeat;
+      url("/Images/Downtown_LA.png") center/cover no-repeat;
 
     filter: blur(12px);
     transform: scale(1.08);
