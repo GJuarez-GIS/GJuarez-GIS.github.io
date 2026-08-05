@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Building verification automation project created with ArcGIS Pro, ModelBuilder, Python, and ArcPy."
+  >
+
+  <title>Building Verification Automation | George Juarez</title>
+
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+  <header class="project-header">
+    <h1>Building Verification Automation</h1>
+
+    <p>
+      ArcGIS Pro, ModelBuilder, Python, ArcPy, and QA/QC
+    </p>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="BuildingFootprints.html">Building Footprints</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#results">Results</a>
+      <a href="#code">Code</a>
+    </nav>
+  </header>
+
+  <main class="project-page">
+
+    <section class="project-section project-intro">
+
+      <h2>Project Overview</h2>
+
+      <p>
+        I developed a building-verification workflow to automate the
+        classification and validation of residential building records.
+        The workflow evaluates multiple housing and accessory dwelling
+        unit fields, then creates a standardized summary in the
+        Verified_Buildings field.
+      </p>
+
+      <p>
+        The process was designed to reduce repetitive manual editing,
+        improve attribute consistency, and support quality assurance
+        and quality control.
+      </p>
+
+      <div class="project-tags">
+        <span>ArcGIS Pro</span>
+        <span>ModelBuilder</span>
+        <span>Python</span>
+        <span>ArcPy</span>
+        <span>Field Calculator</span>
+        <span>QA/QC</span>
+      </div>
+
+    </section>
+
+    <section class="project-section">
+
+      <h2>Problem</h2>
+
+      <p>
+        Residential building information was stored across several
+        attribute fields, including:
+      </p>
+
+      <ul>
+        <li>Single-family attached buildings</li>
+        <li>Single-family detached buildings</li>
+        <li>Two-to-four-unit residential buildings</li>
+        <li>Five-or-more-unit residential buildings</li>
+        <li>Mobile homes</li>
+        <li>Detached, attached, and repurposed ADUs</li>
+        <li>Junior accessory dwelling units</li>
+      </ul>
+
+      <p>
+        Manually reviewing every field and entering a combined value was
+        time-consuming and could introduce inconsistent formatting or
+        missed records.
+      </p>
+
+    </section>
+
+    <section class="project-section" id="workflow">
+
+      <h2>ModelBuilder Workflow</h2>
+
+      <p>
+        I created a ModelBuilder workflow that organizes the processing
+        steps and applies Python field-calculation logic to the building
+        dataset.
+      </p>
+
+      <figure class="project-figure">
+        <img
+          src="Images/building-verification-model.png"
+          alt="ArcGIS Pro ModelBuilder workflow for building verification"
+        >
+
+        <figcaption>
+          ModelBuilder workflow used to process and verify residential
+          building attributes.
+        </figcaption>
+      </figure>
+
+      <div class="workflow-steps">
+
+        <article class="workflow-step">
+          <span class="step-number">1</span>
+
+          <div>
+            <h3>Read Input Fields</h3>
+            <p>
+              The model reads residential building and accessory
+              dwelling unit fields from the feature class.
+            </p>
+          </div>
+        </article>
+
+        <article class="workflow-step">
+          <span class="step-number">2</span>
+
+          <div>
+            <h3>Evaluate Values</h3>
+            <p>
+              Python logic checks each value and ignores null, blank,
+              and zero values.
+            </p>
+          </div>
+        </article>
+
+        <article class="workflow-step">
+          <span class="step-number">3</span>
+
+          <div>
+            <h3>Create Standardized Output</h3>
+            <p>
+              Valid building types and counts are combined into a
+              consistent Verified_Buildings value.
+            </p>
+          </div>
+        </article>
+
+        <article class="workflow-step">
+          <span class="step-number">4</span>
+
+          <div>
+            <h3>Review Results</h3>
+            <p>
+              The completed field supports review, data recovery, and
+              additional QA/QC workflows.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+    <section class="project-section">
+
+      <h2>Python Logic</h2>
+
+      <p>
+        The Python function checks each building field, adds populated
+        classifications to a list, and joins the results into a
+        standardized comma-separated value. The workflow supports
+        building types such as SFA, SFD, M2TO4, M5PLUS, MOBILE, ADU_D,
+        ADU_A, ADU_R, and JADU. :contentReference[oaicite:0]{index=0}
+      </p>
+
+      <pre class="code-preview"><code>def Verified_Buildings(
+    SFA20,
+    SFD20,
+    M2TO420,
+    M5PLUS20,
+    MOBILE20,
+    ADU_D_20,
+    ADU_A_20,
+    ADU_R_20,
+    JADU20,
+    current_value
+):
+    def has_value(value):
+        return value not in (None, "", 0)
+
+    parts = []
+
+    if has_value(SFA20):
+        parts.append("SFA," + str(int(SFA20)))
+
+    if has_value(SFD20):
+        parts.append("SFD," + str(int(SFD20)))
+
+    if has_value(ADU_D_20):
+        parts.append("ADU_D," + str(int(ADU_D_20)))
+
+    if has_value(JADU20):
+        parts.append("JADU," + str(int(JADU20)))
+
+    if not parts:
+        return current_value
+
+    return ",".join(parts)</code></pre>
+
+      <p class="code-note">
+        This is a shortened portfolio example. The full workflow checks
+        all supported residential and ADU fields.
+      </p>
+
+      <div class="project-actions" id="code">
+
+        <a
+          class="project-button"
+          href="/BuildingVerfication/Scripts/Building_Verification_script.py"
+          target="_blank"
+          rel="noopener"
+        >
+          View Full Python Script
+        </a>
+
+        <a
+          class="secondary-button"
+          href="/BuildingVerfication/Scripts/Building_Verification_script.py"
+          download
+        >
+          Download Script
+        </a>
+
+      </div>
+
+    </section>
+
+    <section class="project-section" id="results">
+
+      <h2>Results</h2>
+
+      <div class="comparison-grid">
+
+        <figure class="project-figure">
+          <img
+            src="/Images/Verified_buildings_script before.png"
+            alt="Building attribute table before verification"
+          >
+
+          <figcaption>
+            Before automation: building information distributed across
+            multiple fields.
+          </figcaption>
+        </figure>
+
+        <figure class="project-figure">
+          <img
+            src="/Images/Verified_buildings_script after.png"
+            alt="Building attribute table after verification"
+          >
+
+          <figcaption>
+            After automation: standardized building information stored
+            in the Verified_Buildings field.
+          </figcaption>
+        </figure>
+
+      </div>
+
+      <div class="results-summary">
+
+        <article>
+          <h3>Standardized Values</h3>
+          <p>
+            Building classifications use consistent names and formatting.
+          </p>
+        </article>
+
+        <article>
+          <h3>Reduced Manual Editing</h3>
+          <p>
+            Multiple fields can be processed automatically instead of
+            being reviewed and entered one record at a time.
+          </p>
+        </article>
+
+        <article>
+          <h3>Improved QA/QC</h3>
+          <p>
+            The resulting field makes it easier to identify missing,
+            conflicting, or incorrectly classified records.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <section class="project-section">
+
+      <h2>Additional Automation</h2>
+
+      <p>
+        The building-verification workflow also supported related field
+        calculations for dwelling-unit type and structure type. These
+        scripts identify populated residential fields and assign
+        standardized values such as SFA, SFD, MOBILE HOMES, and
+        RESIDENTIAL. 
+      </p>
+
+    </section>
+
+    <section class="project-section">
+
+      <h2>Skills Demonstrated</h2>
+
+      <ul class="skills-list">
+        <li>ModelBuilder workflow design</li>
+        <li>Python conditional logic</li>
+        <li>ArcGIS Field Calculator scripting</li>
+        <li>Attribute standardization</li>
+        <li>Residential building classification</li>
+        <li>GIS quality assurance and quality control</li>
+        <li>Workflow documentation</li>
+      </ul>
+
+    </section>
+
+    <div class="back-container">
+      <a class="back-button" href="/index.html">
+        ← Back to Portfolio
+      </a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 George Juarez</p>
+  </footer>
+
+</body>
+</html>
