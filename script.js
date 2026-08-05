@@ -15,9 +15,9 @@ const maps = [
         alt: "Published candidate sites map for Irvine"
     },
     {
-        image: "Images/santa-ana-map.jpg",
-        caption: "Santa Ana Candidate Sites Map",
-        alt: "Published candidate sites map for Santa Ana"
+        image: "Images/Garden_Grove_HE.png",
+        caption: "Garden Grove Candidate Sites Map",
+        alt: "Published candidate sites map for Garden Grove"
     },
     {
         image: "Images/orange-map.jpg",

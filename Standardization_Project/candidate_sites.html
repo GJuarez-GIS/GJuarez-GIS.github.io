@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Regional Housing Element candidate site data standardization and QA/QC project covering 35 Southern California jurisdictions."
+  >
+
+  <title>
+    Housing Element Candidate Sites | George Juarez
+  </title>
+
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+
+  <header class="project-header">
+    <h1>Housing Element Candidate Site Standardization</h1>
+
+    <p>
+      Regional GIS Data Development, Parcel Matching, and QA/QC
+    </p>
+
+    <nav>
+      <a href="/index.html">Home</a>
+      <a href="#overview">Overview</a>
+      <a href="#workflow">Workflow</a>
+      <a href="#results">Results</a>
+      <a href="#skills">Skills</a>
+    </nav>
+  </header>
+
+  <main class="project-page">
+
+
+      <!-- =====================================================
+     CANDIDATE SITES HERO CAROUSEL
+===================================================== -->
+
+<section class="project-hero">
+
+  <div
+    class="hero-carousel"
+    aria-label="Candidate sites project image gallery"
+  >
+
+    <div class="hero-carousel-track">
+
+      <!-- Slide 1 -->
+      <figure class="hero-slide active">
+        <img
+          src="/Images/HE_MAP.png"
+          alt="This project covered 35 jurisdictions."
+        >
+
+        <figcaption>
+          This project covered 35 jurisdictions.
+        </figcaption>
+      </figure>
+
+      <!-- Slide 2 -->
+      <figure class="hero-slide">
+        <img
+          src="/Images/Fullerton_HE.png"
+          alt="Map of standardized Housing Element candidate sites in Fullerton"
+        >
+
+        <figcaption>
+          Standardized Housing Element candidate sites for the City of Fullerton.
+        </figcaption>
+      </figure>
+
+      <!-- Slide 3 -->
+      <figure class="hero-slide">
+        <img
+          src="/Images/Source_sites.png"
+          alt="Housing Element candidate site inventory table from Anaheim"
+        >
+
+        <figcaption>
+          Source candidate-site information from a publicly available
+          Housing Element inventory table.
+        </figcaption>
+      </figure>
+
+
+      <!-- Slide 4  -->
+      <figure class="hero-slide">
+        <img
+          src="/Images/Source_output_sites.png"
+          alt="Standardized candidate site parcel and attribute popup in GIS"
+        >
+
+        <figcaption>
+          GIS-ready parcel with standardized APN, jurisdiction,
+          capacity, and dataset-year attributes.
+        </figcaption>
+      </figure>
+    </div>
+
+    <!-- Previous button -->
+    <button
+      class="hero-carousel-button hero-previous"
+      type="button"
+      aria-label="Show previous image"
+    >
+      &#10094;
+    </button>
+
+    <!-- Next button -->
+    <button
+      class="hero-carousel-button hero-next"
+      type="button"
+      aria-label="Show next image"
+    >
+      &#10095;
+    </button>
+
+    <!-- Slide indicators -->
+    <div
+      class="hero-carousel-dots"
+      aria-label="Choose carousel image"
+    >
+      <button
+        class="hero-dot active"
+        type="button"
+        aria-label="Show image 1"
+        data-slide="0"
+      ></button>
+
+      <button
+        class="hero-dot"
+        type="button"
+        aria-label="Show image 2"
+        data-slide="1"
+      ></button>
+
+      <button
+        class="hero-dot"
+        type="button"
+        aria-label="Show image 3"
+        data-slide="2"
+      ></button>
+
+      <button
+        class="hero-dot"
+        type="button"
+        aria-label="Show image 4"
+        data-slide="3"
+      ></button>
+    </div>
+
+  </div>
+
+
+    <!-- OVERVIEW -->
+    <section class="project-section" id="overview">
+
+      <p class="project-eyebrow">
+        Regional Housing Planning
+      </p>
+
+      <h2>Project Overview</h2>
+
+      <p class="project-lead">
+        I developed standardized GIS datasets for Housing Element
+        candidate sites across 35 Southern California jurisdictions.
+        The project required reviewing publicly available planning
+        documents, extracting parcel information, reconciling assessor
+        parcel numbers from different years, cleaning inconsistent
+        attributes, and producing GIS-ready spatial datasets.
+      </p>
+
+      <p>
+        The completed datasets were delivered to the Southern California
+        Association of Governments for regional
+        mapping products.
+      </p>
+
+      <div class="project-tags">
+        <span>ArcGIS Pro</span>
+        <span>Parcel Data</span>
+        <span>APN Matching</span>
+        <span>Data Standardization</span>
+        <span>QA/QC</span>
+        <span>Housing Elements</span>
+        <span>Regional Planning</span>
+      </div>
+
+    </section>
+
+    <!-- PROJECT METRICS -->
+    <section class="project-metrics">
+
+      <article class="metric-card">
+        <strong>35</strong>
+        <span>Jurisdictions Reviewed</span>
+      </article>
+
+      <article class="metric-card">
+        <strong>Hundreds</strong>
+        <span>of PDF Pages Reviewed</span>
+      </article>
+
+      <article class="metric-card">
+        <strong>Multiple</strong>
+        <span>Parcel and APN Years Reconciled</span>
+      </article>
+
+      <article class="metric-card">
+        <strong>Regional</strong>
+        <span>GIS Dataset Delivered</span>
+      </article>
+
+    </section>
+
+    <!-- CHALLENGE -->
+    <section class="project-section">
+
+      <p class="project-eyebrow">
+        The Challenge
+      </p>
+
+      <h2>Turning Inconsistent Documents Into Usable GIS Data</h2>
+
+      <p>
+        Candidate site information was distributed across Housing
+        Element documents containing hundreds of pages. Each
+        jurisdiction presented its information differently, including
+        variations in table layouts, field names, parcel identifiers,
+        site descriptions, and reporting formats.
+      </p>
+
+      <div class="challenge-grid">
+
+        <article>
+          <h3>Inconsistent Formats</h3>
+
+          <p>
+            Candidate site tables were structured differently across
+            jurisdictions and required manual interpretation before the
+            information could be standardized.
+          </p>
+        </article>
+
+        <article>
+          <h3>Changing Parcel Numbers</h3>
+
+          <p>
+            APNs referenced in planning documents did not always match
+            current parcel datasets because parcels had been split,
+            combined, renumbered, or recorded during different
+            assessment years.
+          </p>
+        </article>
+
+        <article>
+          <h3>Missing or Uneven Attributes</h3>
+
+          <p>
+            Some documents contained incomplete or differently named
+            fields, requiring careful validation and consistent
+            categorization.
+          </p>
+        </article>
+
+        <article>
+          <h3>Regional Consistency</h3>
+
+          <p>
+            Data from all 35 jurisdictions needed to follow a common
+            structure before it could support regional analysis and
+            mapping.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- ROLE -->
+    <section class="project-section">
+
+      <p class="project-eyebrow">
+        My Contribution
+      </p>
+
+      <h2>Responsibilities</h2>
+
+      <ul class="project-list">
+        <li>
+          Reviewed Housing Element documents from 35 jurisdictions.
+        </li>
+
+        <li>
+          Located and extracted candidate site information from
+          large PDF documents.
+        </li>
+
+        <li>
+          Standardized field names, data types, values, and naming
+          conventions.
+        </li>
+
+        <li>
+          Reconciled APNs across parcel datasets from different years.
+        </li>
+
+        <li>
+          Identified parcel splits, combinations, duplicates, and
+          unmatched records.
+        </li>
+
+        <li>
+          Connected tabular candidate site information to parcel
+          geometry.
+        </li>
+
+        <li>
+          Performed attribute and spatial QA/QC.
+        </li>
+
+        <li>
+          Created final shapefiles and feature classes for regional use.
+        </li>
+
+        <li>
+          Prepared standardized data for delivery.
+        </li>
+      </ul>
+
+    </section>
+
+    <!-- WORKFLOW -->
+    <section class="project-section" id="workflow">
+
+      <p class="project-eyebrow">
+        Technical Workflow
+      </p>
+
+      <h2>From Planning Documents to Regional GIS Data</h2>
+
+      <div class="workflow-timeline">
+
+        <article class="workflow-item">
+          <span class="workflow-number">1</span>
+
+          <div>
+            <h3>Review Source Documents</h3>
+
+            <p>
+              Examined Housing Element PDFs and located candidate site
+              inventories, parcel tables, site maps, and supporting
+              documentation.
+            </p>
+          </div>
+        </article>
+
+        <article class="workflow-item">
+          <span class="workflow-number">2</span>
+
+          <div>
+            <h3>Extract Candidate Site Records</h3>
+
+            <p>
+              Transferred relevant parcel and housing information into
+              a structured working dataset.
+            </p>
+          </div>
+        </article>
+
+        <article class="workflow-item">
+          <span class="workflow-number">3</span>
+
+          <div>
+            <h3>Clean and Standardize Attributes</h3>
+
+            <p>
+              Normalized APNs, jurisdiction names, site identifiers,
+              capacity values, zoning information, and other fields.
+            </p>
+          </div>
+        </article>
+
+        <article class="workflow-item">
+          <span class="workflow-number">4</span>
+
+          <div>
+            <h3>Reconcile Parcel Versions</h3>
+
+            <p>
+              Compared parcel identifiers across different assessor
+              years and researched APN changes when direct matches were
+              unavailable.
+            </p>
+          </div>
+        </article>
+
+        <article class="workflow-item">
+          <span class="workflow-number">5</span>
+
+          <div>
+            <h3>Create Spatial Features</h3>
+
+            <p>
+              Matched standardized candidate site records to parcel
+              geometry and created jurisdiction-level GIS datasets.
+            </p>
+          </div>
+        </article>
+
+        <article class="workflow-item">
+          <span class="workflow-number">6</span>
+
+          <div>
+            <h3>Perform QA/QC</h3>
+
+            <p>
+              Checked for missing parcels, duplicate records, invalid
+              APNs, incorrect geometry, inconsistent attributes, and
+              jurisdiction boundary issues.
+            </p>
+          </div>
+        </article>
+
+        <article class="workflow-item">
+          <span class="workflow-number">7</span>
+
+          <div>
+            <h3>Deliver Regional Dataset</h3>
+
+            <p>
+              Prepared the final standardized datasets and submitted to
+              SCAG.
+            </p>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- OPTIONAL SOURCE AND OUTPUT IMAGES -->
+    <section class="project-section">
+
+      <p class="project-eyebrow">
+        Project Documentation
+      </p>
+
+      <h2>Source-to-Output Examples</h2>
+
+      <div class="comparison-grid">
+
+        <figure class="project-figure">
+          <img
+            src="/Images/Source_sites.png"
+            alt="Example Housing Element candidate site table from a public planning document"
+          >
+
+          <figcaption>
+            Example source material from a publicly available Housing
+            Element document.
+          </figcaption>
+        </figure>
+
+        <figure class="project-figure">
+          <img
+            src="/Images/Source_output_sites.png"
+            alt="Standardized candidate site attribute table in ArcGIS Pro."
+          >
+
+          <figcaption>
+            Standardized candidate site records prepared for GIS
+            analysis and regional mapping.
+          </figcaption>
+        </figure>
+
+      </div>
+
+    </section>
+
+    <!-- QA/QC -->
+    <section class="project-section">
+
+      <p class="project-eyebrow">
+        Quality Assurance and Quality Control
+      </p>
+
+      <h2>Validation Process</h2>
+
+      <p>
+        Because the project combined data from multiple documents,
+        jurisdictions, and parcel years, QA/QC was central to the
+        workflow rather than something performed only at the end.
+      </p>
+
+      <div class="results-summary">
+
+        <article>
+          <h3>Attribute Validation</h3>
+
+          <p>
+            Checked required fields, naming conventions, data types,
+            null values, duplicate site identifiers, and inconsistent
+            classifications.
+          </p>
+        </article>
+
+        <article>
+          <h3>APN Validation</h3>
+
+          <p>
+            Removed formatting differences and investigated unmatched,
+            outdated, split, combined, or renumbered parcels.
+          </p>
+        </article>
+
+        <article>
+          <h3>Spatial Validation</h3>
+
+          <p>
+            Confirmed that candidate sites matched the correct parcel
+            geometry and jurisdiction boundaries.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- RESULTS -->
+    <section class="project-section" id="results">
+
+      <p class="project-eyebrow">
+        Results and Impact
+      </p>
+
+      <h2>Regional Dataset Development</h2>
+
+      <p>
+        The completed workflow converted fragmented candidate site
+        information into consistent spatial datasets that could be
+        compared and mapped across jurisdictions.
+      </p>
+
+      <div class="impact-box">
+
+        <p>
+          <strong>Project outcome:</strong>
+          Standardized candidate site GIS data for 35 jurisdictions was
+          used to support Orange County Projections (OCP) datasets and 
+          regional analysis.
+        </p>
+
+      </div>
+
+      <div class="results-summary">
+
+        <article>
+          <h3>Consistent Schema</h3>
+
+          <p>
+            Jurisdiction datasets were organized using standardized
+            field names, formats, and classifications.
+          </p>
+        </article>
+
+        <article>
+          <h3>Improved Parcel Accuracy</h3>
+
+          <p>
+            APN discrepancies were researched and reconciled across
+            multiple parcel dataset years.
+          </p>
+        </article>
+
+        <article>
+          <h3>Regional Usability</h3>
+
+          <p>
+            The final datasets supported mapping, comparison, review,
+            and regional housing analysis.
+          </p>
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- SKILLS -->
+    <section class="project-section" id="skills">
+
+      <p class="project-eyebrow">
+        Skills Demonstrated
+      </p>
+
+      <h2>Technical and Professional Skills</h2>
+
+      <div class="skills-columns">
+
+        <div>
+          <h3>GIS and Data</h3>
+
+          <ul>
+            <li>ArcGIS Pro</li>
+            <li>Parcel data management</li>
+            <li>APN matching and reconciliation</li>
+            <li>Attribute joins</li>
+            <li>Spatial joins</li>
+            <li>Feature class development</li>
+            <li>Geodatabase management</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Data Quality</h3>
+
+          <ul>
+            <li>Data cleaning</li>
+            <li>Schema standardization</li>
+            <li>Attribute validation</li>
+            <li>Spatial QA/QC</li>
+            <li>Duplicate detection</li>
+            <li>Error research and correction</li>
+            <li>Cross-year parcel validation</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Planning and Documentation</h3>
+
+          <ul>
+            <li>Housing Element review</li>
+            <li>Candidate site inventories</li>
+            <li>Regional planning support</li>
+            <li>Public document research</li>
+            <li>Workflow documentation</li>
+            <li>Large-volume document review</li>
+            <li>Technical problem solving</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- DATA NOTE -->
+    <section class="project-section data-note">
+
+      <h2>Data and Privacy Note</h2>
+
+      <p>
+        This project used publicly available planning and parcel data.
+        Portfolio examples are presented to demonstrate the
+        standardization and GIS workflow without exposing internal
+        working files or unnecessary identifying information.
+      </p>
+
+    </section>
+
+    <div class="back-container">
+      <a class="back-button" href="/index.html">
+        ← Back to Portfolio
+      </a>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 George Juarez</p>
+  </footer>
+
+  <!--Hero Carousel arrow script --> 
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const carousel = document.querySelector(".hero-carousel");
+
+    if (!carousel) {
+      return;
+    }
+
+    const slides = carousel.querySelectorAll(".hero-slide");
+    const dots = carousel.querySelectorAll(".hero-dot");
+    const previousButton = carousel.querySelector(".hero-previous");
+    const nextButton = carousel.querySelector(".hero-next");
+
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      if (index < 0) {
+        currentSlide = slides.length - 1;
+      } else if (index >= slides.length) {
+        currentSlide = 0;
+      } else {
+        currentSlide = index;
+      }
+
+      slides.forEach((slide, slideIndex) => {
+        slide.classList.toggle(
+          "active",
+          slideIndex === currentSlide
+        );
+      });
+
+      dots.forEach((dot, dotIndex) => {
+        dot.classList.toggle(
+          "active",
+          dotIndex === currentSlide
+        );
+      });
+    }
+
+    previousButton.addEventListener("click", () => {
+      showSlide(currentSlide - 1);
+    });
+
+    nextButton.addEventListener("click", () => {
+      showSlide(currentSlide + 1);
+    });
+
+    dots.forEach((dot) => {
+      dot.addEventListener("click", () => {
+        const selectedSlide = Number(dot.dataset.slide);
+        showSlide(selectedSlide);
+      });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "ArrowLeft") {
+        showSlide(currentSlide - 1);
+      }
+
+      if (event.key === "ArrowRight") {
+        showSlide(currentSlide + 1);
+      }
+    });
+
+    showSlide(0);
+  });
+</script>
+</body>
+</html>
