@@ -216,21 +216,20 @@
 
     return ",".join(parts)</code></pre>
 
-      <p class="code-note">
-        This is a shortened portfolio example. The full workflow checks
-        all supported residential and ADU fields.
-      </p>
+      <h2>Python Code</h2>
+
+
 
       <div class="project-actions" id="code">
 
-        <a
-          class="project-button"
-          href="/BuildingVerfication/Scripts/Building_Verification_script.py"
-          target="_blank"
-          rel="noopener"
-        >
-          View Full Python Script
+       <a
+        class="project-button"
+        href="Scripts/Building_Verification_code.html"
+        target="_blank"
+        rel="noopener">
+        View Raw Python
         </a>
+         
 
         <a
           class="secondary-button"
@@ -345,7 +344,25 @@
 
   <footer>
     <p>&copy; 2026 George Juarez</p>
-  </footer>
+</footer>
+
+<script>
+fetch("Scripts/Building_Verification_script.py")
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Could not load Python file");
+        }
+
+        return response.text();
+    })
+    .then(code => {
+        document.getElementById("python-code").textContent = code;
+    })
+    .catch(error => {
+        document.getElementById("python-code").textContent =
+            "Unable to load code.";
+    });
+</script>
 
 </body>
 </html>

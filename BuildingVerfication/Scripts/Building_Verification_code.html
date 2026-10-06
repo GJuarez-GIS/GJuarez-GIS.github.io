@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Building Verification Python Code | George Juarez</title>
+
+    <!-- style.css is two folders above this page -->
+    <link rel="stylesheet" href="../../style.css">
+</head>
+
+<body>
+
+    <header class="project-header">
+
+        <h1>Building Verification Python Script</h1>
+
+        <p>ArcPy · Python · GIS Automation</p>
+
+        <nav>
+            <a href="../../index.html">Home</a>
+            <a href="../Building_Verification_page.html">Back to Project</a>
+        </nav>
+
+    </header>
+
+
+    <main class="project-page">
+
+        <section class="project-section">
+
+            <h2>Building Verification Script</h2>
+
+            <p class="code-note">
+                Portfolio version of the Python workflow used for building
+                verification and attribute standardization.
+            </p>
+
+            <pre class="code-preview"><code id="python-code">Loading code...</code></pre>
+
+        </section>
+
+    </main>
+
+
+    <script>
+        fetch("Building_Verification_script.py")
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Could not load Python file");
+                }
+
+                return response.text();
+            })
+            .then(code => {
+                document.getElementById("python-code").textContent = code;
+            })
+            .catch(error => {
+                document.getElementById("python-code").textContent =
+                    "Unable to load Python code.";
+            });
+    </script>
+
+</body>
+
+</html>
