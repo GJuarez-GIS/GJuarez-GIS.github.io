@@ -47,4 +47,3 @@ def Verified_Buildings(SFA, SFD, M2_4, M5PLUS, MOBILE, ADU_D, ADU_A, ADU_R, JADU
     
 # .join(parts) = brings all the values together such as (SFD,1, ADU_D,1).        
     return "," .join(parts)
-
