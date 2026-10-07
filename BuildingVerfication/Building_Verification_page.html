@@ -178,20 +178,20 @@
         The Python function checks each building field, adds populated
         classifications to a list, and joins the results into a
         standardized comma-separated value. The workflow supports
-        building types such as SFA, SFD, M2TO4, M5PLUS, MOBILE, ADU_D,
+        building types such as SFA, SFD, M2_4, M5PLUS, MOBILE, ADU_D,
         ADU_A, ADU_R, and JADU. 
       </p>
 
       <pre class="code-preview"><code>def Verified_Buildings(
-    SFA20,
-    SFD20,
-    M2TO420,
-    M5PLUS20,
-    MOBILE20,
-    ADU_D_20,
-    ADU_A_20,
-    ADU_R_20,
-    JADU20,
+    SFA,
+    SFD,
+    M2_4,
+    M5PLUS,
+    MOBILE,
+    ADU_D,
+    ADU_A,
+    ADU_R,
+    JADU,
     current_value
 ):
     def has_value(value):
@@ -199,17 +199,17 @@
 
     parts = []
 
-    if has_value(SFA20):
-        parts.append("SFA," + str(int(SFA20)))
+    if has_value(SFA):
+        parts.append("SFA," + str(int(SFA)))
 
-    if has_value(SFD20):
-        parts.append("SFD," + str(int(SFD20)))
+    if has_value(SFD):
+        parts.append("SFD," + str(int(SFD)))
 
-    if has_value(ADU_D_20):
-        parts.append("ADU_D," + str(int(ADU_D_20)))
+    if has_value(ADU_D):
+        parts.append("ADU_D," + str(int(ADU_D)))
 
-    if has_value(JADU20):
-        parts.append("JADU," + str(int(JADU20)))
+    if has_value(JADU):
+        parts.append("JADU," + str(int(JADU)))
 
     if not parts:
         return current_value

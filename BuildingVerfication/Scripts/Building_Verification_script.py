@@ -5,7 +5,7 @@ Verified_Buildings(!SFA!, !SFD!, !M2TO4!, !M5PLUS!, !MOBILE!, !ADU_D!, !ADU_A!, 
 
 #Code Block:
  #def = definition this defines all of the fields that are going to be used within the Verified_Buildings field.
-def Verified_Buildings(SFA, SFD, M2TO4, M5PLUS, MOBILE, ADU_D, ADU_A, ADU_R, JADU, STRUC_TYPE):
+def Verified_Buildings(SFA, SFD, M2_4, M5PLUS, MOBILE, ADU_D, ADU_A, ADU_R, JADU, STRUC_TYPE):
 
 #this defines if there is a value to return that value as long as it isn't a NUll, empty space, or a 0.   
     def has(value):
@@ -16,13 +16,13 @@ def Verified_Buildings(SFA, SFD, M2TO4, M5PLUS, MOBILE, ADU_D, ADU_A, ADU_R, JAD
     
 # These are the Main Buildings. 
 #if has() = if there is a value within this field.
-#(str) = string and (int) = integer str(int(SFA20))) will return whatever number is in the field as a integer 1 instead of a text 1.0.
+#(str) = string and (int) = integer str(int(SFA))) will return whatever number is in the field as a integer 1 instead of a text 1.0.
     if has (SFA):
         parts.append("SFA," + str(int(SFA)))
     if has (SFD):
         parts.append("SFD," + str(int(SFD)))
-    if has (M2TO4):
-        parts.append("M2TO4," + str(int(M2TO4)))
+    if has (M2_4):
+        parts.append("M2_4," + str(int(M2_4)))
     if has (M5PLUS):
         parts.append("M5PLUS," + str(int(M5PLUS)))
     if has (MOBILE):
